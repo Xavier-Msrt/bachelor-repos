@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "network.h": "c",
+        "messages.h": "c"
+    }
+}

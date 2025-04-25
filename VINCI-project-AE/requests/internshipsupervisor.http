@@ -1,0 +1,76 @@
+@baseUrl = http://localhost:8080
+@companyID = 4
+
+
+
+### Login Achille Skile
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "achille.skile@student.vinci.be",
+  "password": "mdpuser.1"
+}
+
+> {%
+  client.global.set("userToken", response.body.token);
+%}
+
+### Add a supervisor to comapny
+POST {{baseUrl}}/internshipSupervisors
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "emailSupervisor": "luc.charle@global.com",
+  "firstNameSupervisor": "Luc",
+  "lastNameSupervisor": "Charle",
+  "phoneNumberSupervisor": "02485002299",
+  "companyIdSupervisor": 1
+}
+
+### Login Prof
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "raphael.baroni@vinci.be",
+  "password": "Prof24,z"
+}
+
+> {%
+  client.global.set("profToken", response.body.token);
+%}
+
+
+### Add a supervisor to comapny
+POST {{baseUrl}}/internshipSupervisors
+Authorization: {{profToken}}
+Content-Type: application/json
+
+{
+  "emailSupervisor": "luc.charle@global.com",
+  "firstNameSupervisor": "Luc",
+  "lastNameSupervisor": "Charle",
+  "phoneNumberSupervisor": "0485002299",
+  "companyIdSupervisor": 2
+}
+
+
+### Login chisom
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "achille.skile@student.vinci.be",
+  "password": "mdpuser.1"
+}
+
+> {%
+  client.global.set("userToken", response.body.token);
+%}
+
+
+### Get list of supervisor
+GET {{baseUrl}}/internshipSupervisors/{{companyID}}
+Authorization: {{userToken}}

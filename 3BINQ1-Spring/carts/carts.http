@@ -1,0 +1,27 @@
+@baseUrl=http://localhost:9003
+@pseudo=NightHawk
+
+### Create item 1 of NightHawk
+POST {{baseUrl}}/carts/users/{{pseudo}}/products/1
+
+### Create item 2 of NightHawk
+POST {{baseUrl}}/carts/users/{{pseudo}}/products/2
+
+### Create item 1 of GhostRider
+POST {{baseUrl}}/carts/users/GhostRider/products/1
+
+
+### Get All cart items oby Author (pseudo)
+GET {{baseUrl}}/carts/users/{{pseudo}}
+
+
+
+### Delete item of x
+DELETE {{baseUrl}}/carts/users/{{pseudo}}/products/1
+
+### Delete All items of user
+DELETE {{baseUrl}}/carts/users/{{pseudo}}
+
+
+### Delete One product of all user
+DELETE {{baseUrl}}/carts/products/1

@@ -1,0 +1,38 @@
+@baseUrl=http://localhost:9001
+
+### Get All
+GET {{baseUrl}}/product
+
+### Get One
+GET {{baseUrl}}/product/1
+
+
+### Create one
+POST {{baseUrl}}/product
+Content-Type: application/json
+
+{
+  "name": "Savon",
+  "category": "soin",
+  "price": 2.5
+}
+
+### Remove all
+DELETE {{baseUrl}}/product
+
+
+### Remove one
+DELETE {{baseUrl}}/product/3
+
+
+
+### Modify one
+PUT {{baseUrl}}/product/3
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "SavonSSS",
+  "category": "soin",
+  "price": 2.5
+}

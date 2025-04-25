@@ -1,0 +1,61 @@
+@baseUrl = http://localhost:8080
+
+### Login admin (request should pass)
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "laurent.leleux@vinci.be",
+  "password": "Prof24,z"
+}
+
+> {%
+  client.global.set("userToken", response.body.token);
+%}
+
+### Login teacher (request should pass)
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "brigitte.lehmann@vinci.be",
+  "password": "test"
+}
+
+> {%
+  client.global.set("userToken", response.body.token);
+%}
+
+### Login Joachim (request should fail)
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "joachim.qi@student.vinci.be",
+  "password": "test"
+}
+
+> {%
+  client.global.set("userToken", response.body.token);
+%}
+
+### Get User info
+GET {{baseUrl}}/users/me
+Authorization: {{userToken}}
+
+### Get all users
+GET {{baseUrl}}/users/admin/usersList
+Authorization: {{userToken}}
+
+### Get one user profile (request should pass)
+GET {{baseUrl}}/users/admin/7
+Authorization: {{userToken}}
+
+### Get one internship (request should pass)
+GET {{baseUrl}}/internships/admin/7
+Authorization: {{userToken}}
+
+### Get all contacts (request should pass)
+GET {{baseUrl}}/contacts/admin/contactsList/7
+Authorization: {{userToken}}
+

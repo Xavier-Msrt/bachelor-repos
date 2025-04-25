@@ -1,0 +1,126 @@
+@baseUrl = http://localhost:8080
+@idCompany = 4
+
+### Login Student account (correct)
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "achille.skile@student.vinci.be",
+  "password": "mdpuser.1"
+}
+
+> {%
+  client.global.set("userToken", response.body.token);
+%}
+
+### Login Raphael Baroni (correct)
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "raphael.baroni@vinci.be",
+  "password": "Prof24,z"
+}
+
+> {%
+  client.global.set("teacherToken", response.body.token);
+%}
+
+### Get User contacts (correct)
+GET {{baseUrl}}/contacts
+Authorization: {{userToken}}
+
+### Post Contact info (correct)
+POST {{baseUrl}}/contacts/{{idCompany}}
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "state": "ADMITTED",
+  "versionContact": 1,
+  "studentIdContact": 8,
+  "companyIdContact": 4,
+  "meetingPlace": "REMOTE"
+}
+
+### Post Contact info (correct)
+POST {{baseUrl}}/contacts/{{idCompany}}
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "state": "ACCEPTED",
+  "versionContact": 2,
+  "studentIdContact": 8,
+  "companyIdContact": 4
+}
+
+### Try to create an intership (correct)
+POST {{baseUrl}}/internships
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "studentIdInternship": 8,
+  "companyIdInternship": 4,
+  "schoolYearIdInternship": 2,
+  "internSupervisorId": 2,
+  "signatureDate": "2023-02-02",
+  "internShipProject": null,
+  "contactInternship": {
+    "versionContact": 2,
+    "studentIdContact": 8,
+    "companyIdContact": 4,
+    "schoolYearIdContact": 2,
+    "state": "ACCEPTED"
+  }
+}
+
+### GET internship (correct)
+GET {{baseUrl}}/internships
+Authorization: {{userToken}}
+
+### Bad token try to get (correct)
+GET {{baseUrl}}/internships
+Authorization: {{fakeToken}}
+
+### Post an internship for update (correct)
+POST {{baseUrl}}/internships/update
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "idInternship": 4,
+  "studentIdInternship": 8,
+  "companyIdInternship": 4,
+  "schoolYearIdInternship": 2,
+  "internSupervisorId": 2,
+  "signatureDate": "2023-02-02",
+  "versionInternship": 1,
+  "internShipProject": "Projet de stage"
+}
+
+### Post an internship for update (try to access to an internship that is not yours)
+POST {{baseUrl}}/internships/update
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "idInternship": 1,
+  "studentIdInternship": 8,
+  "companyIdInternship": 4,
+  "schoolYearIdInternship": 2,
+  "internSupervisorId": 1,
+  "signatureDate": "2024-03-03",
+  "versionInternship": 1,
+  "internShipProject": "Projet de stage final"
+}
+
+### Get internships count for all years
+GET {{baseUrl}}/internships/admin/count
+Authorization: {{teacherToken}}
+
+### Get internships count for year with the id 2
+GET {{baseUrl}}/internships/admin/count/2
+Authorization: {{teacherToken}}

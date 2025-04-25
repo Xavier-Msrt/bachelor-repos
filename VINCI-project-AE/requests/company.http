@@ -1,0 +1,101 @@
+@baseUrl = http://localhost:8080
+
+### Login User
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "achille.skile@student.vinci.be",
+  "password": "mdpuser.1"
+}
+
+> {%
+  client.global.set("jamesToken", response.body.token);
+%}
+
+### GET ALL
+GET {{baseUrl}}/companies
+Authorization: {{jamesToken}}
+
+
+### POST Insert new company (fail)
+POST {{baseUrl}}/companies
+Authorization: {{jamesToken}}
+Content-Type: application/json
+
+{
+  "tradeName": "Objectif Jeux",
+  "street": "Chaussée de Liègee",
+  "boxNumber": "156",
+  "city": "Hondelange",
+  "postCode": "6780",
+  "phoneNumberCompany": "0499278373",
+  "emailCompany": "creative@example.com"
+}
+
+### POST Insert new company
+POST {{baseUrl}}/companies
+Authorization: {{jamesToken}}
+Content-Type: application/json
+
+{
+  "tradeName": "Objectif Jeux",
+  "street": "Chaussée de Liègee",
+  "boxNumber": "156",
+  "city": "Hondelange",
+  "postCode": "6780",
+  "phoneNumberCompany": "0499278373",
+  "emailCompany": "support@objectifjeu.com"
+}
+
+
+### POST Insert new company with designation
+POST {{baseUrl}}/companies
+Authorization: {{jamesToken}}
+Content-Type: application/json
+
+{
+  "tradeName": "Objectif Jeux",
+  "designation": "OJ Liege",
+  "street": "Chaussée de Liègee",
+  "boxNumber": "156",
+  "city": "Hondelange",
+  "postCode": "6780",
+  "phoneNumberCompany": "0499278373",
+  "emailCompany": "support@objectifjeu.com"
+}
+
+
+### Login Raphael Baroni
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "raphael.baroni@vinci.be",
+  "password": "Prof24,z"
+}
+
+> {%
+  client.global.set("teacherToken", response.body.token);
+%}
+
+### GET ALL WITH YEAR PARAM
+GET {{baseUrl}}/companies/admin/2
+Authorization: {{teacherToken}}
+
+### One Company with they id
+GET {{baseUrl}}/companies/2
+Authorization: {{teacherToken}}
+
+### Blacklist a company
+POST {{baseUrl}}/companies/blacklist
+Authorization: {{teacherToken}}
+Content-Type: application/json
+
+{
+  "idCompany": 4,
+  "blackListMotivation": "This company is not good for students",
+  "versionCompany": 1
+}
+
+

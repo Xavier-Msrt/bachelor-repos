@@ -1,0 +1,183 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Xavier\\source\\repos\\revision-api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|c:\\users\\xavier\\source\\repos\\revision-api\\models\\articlesdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|solutionrelative:models\\articlesdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|c:\\users\\xavier\\source\\repos\\revision-api\\unitofwork\\uniteofworkdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|solutionrelative:unitofwork\\uniteofworkdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|c:\\users\\xavier\\source\\repos\\revision-api\\unitofwork\\uniteofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|solutionrelative:unitofwork\\uniteofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|c:\\users\\xavier\\source\\repos\\revision-api\\repositories\\articlerepositorysql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|solutionrelative:repositories\\articlerepositorysql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|c:\\users\\xavier\\source\\repos\\revision-api\\repositories\\baserepositorysql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|solutionrelative:repositories\\baserepositorysql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|c:\\users\\xavier\\source\\repos\\revision-api\\controllers\\articlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|solutionrelative:controllers\\articlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|c:\\users\\xavier\\source\\repos\\revision-api\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|solutionrelative:repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|c:\\users\\xavier\\source\\repos\\revision-api\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|solutionrelative:models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ArticlesDb/True/SqlTable/dbo.Categories.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|c:\\users\\xavier\\source\\repos\\revision-api\\dtos\\articledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87F1623-486F-4B97-8816-C10B3951DF84}|revision-api.csproj|solutionrelative:dtos\\articledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ArticlesDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Xavier\\source\\repos\\revision-api\\Models\\ArticlesDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\ArticlesDbContext.cs",
+              "ToolTip": "C:\\Users\\Xavier\\source\\repos\\revision-api\\Models\\ArticlesDbContext.cs",
+              "RelativeToolTip": "Models\\ArticlesDbContext.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAgwBYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:35:50.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UniteOfWorkDB.cs",
+              "DocumentMoniker": "C:\\Users\\Xavier\\source\\repos\\revision-api\\UnitOfWork\\UniteOfWorkDB.cs",
+              "RelativeDocumentMoniker": "UnitOfWork\\UniteOfWorkDB.cs",
+              "ToolTip": "C:\\Users\\Xavier\\source\\repos\\revision-api\\UnitOfWork\\UniteOfWorkDB.cs",
+              "RelativeToolTip": "UnitOfWork\\UniteOfWorkDB.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:35:45.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UniteOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Xavier\\source\\repos\\revision-api\\UnitOfWork\\UniteOfWork.cs",
+              "RelativeDocumentMoniker": "UnitOfWork\\UniteOfWork.cs",
+              "ToolTip": "C:\\Users\\Xavier\\source\\repos\\revision-api\\UnitOfWork\\UniteOfWork.cs",
+              "RelativeToolTip": "UnitOfWork\\UniteOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:35:29.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BaseRepositorySQL.cs",
+              "DocumentMoniker": "C:\\Users\\Xavier\\source\\repos\\revision-api\\Repositories\\BaseRepositorySQL.cs",
+              "RelativeDocumentMoniker": "Repositories\\BaseRepositorySQL.cs",
+              "ToolTip": "C:\\Users\\Xavier\\source\\repos\\revision-api\\Repositories\\BaseRepositorySQL.cs",
+              "RelativeToolTip": "Repositories\\BaseRepositorySQL.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAwwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:30:02.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Xavier\\source\\repos\\revision-api\\Repositories\\IRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\IRepository.cs",
+              "ToolTip": "C:\\Users\\Xavier\\source\\repos\\revision-api\\Repositories\\IRepository.cs",
+              "RelativeToolTip": "Repositories\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:30:14.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ArticleRepositorySQL.cs",
+              "DocumentMoniker": "C:\\Users\\Xavier\\source\\repos\\revision-api\\Repositories\\ArticleRepositorySQL.cs",
+              "RelativeDocumentMoniker": "Repositories\\ArticleRepositorySQL.cs",
+              "ToolTip": "C:\\Users\\Xavier\\source\\repos\\revision-api\\Repositories\\ArticleRepositorySQL.cs",
+              "RelativeToolTip": "Repositories\\ArticleRepositorySQL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:16:57.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Article.cs",
+              "DocumentMoniker": "C:\\Users\\Xavier\\source\\repos\\revision-api\\Models\\Article.cs",
+              "RelativeDocumentMoniker": "Models\\Article.cs",
+              "ToolTip": "C:\\Users\\Xavier\\source\\repos\\revision-api\\Models\\Article.cs",
+              "RelativeToolTip": "Models\\Article.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:16:49.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "dbo.Categories.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ArticlesDb/True/SqlTable/dbo.Categories.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ArticlesDb/True/SqlTable/dbo.Categories.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-09T09:15:20.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ArticleController.cs",
+              "DocumentMoniker": "C:\\Users\\Xavier\\source\\repos\\revision-api\\Controllers\\ArticleController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ArticleController.cs",
+              "ToolTip": "C:\\Users\\Xavier\\source\\repos\\revision-api\\Controllers\\ArticleController.cs",
+              "RelativeToolTip": "Controllers\\ArticleController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAUwC0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T08:04:55.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ArticleDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Xavier\\source\\repos\\revision-api\\DTOs\\ArticleDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\ArticleDTO.cs",
+              "ToolTip": "C:\\Users\\Xavier\\source\\repos\\revision-api\\DTOs\\ArticleDTO.cs",
+              "RelativeToolTip": "DTOs\\ArticleDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA3wAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T08:03:07.883Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

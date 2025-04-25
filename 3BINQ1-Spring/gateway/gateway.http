@@ -1,0 +1,91 @@
+@baseUrl=http://localhost:9100
+@token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJhdXRoMCIsInBzZXVkbyI6IkZpZG91In0.j-v2OdWkTtO6LTbrzEZMERwphHCJJHJzhOIA3TcE84yqJW9jesk-UWEZLIgYqOC2nsV3VbmBeEEUnElwmn6v4w
+@productId=1
+@pseudo=Fidou
+
+### Connect
+POST {{baseUrl}}/authentication/connect
+Content-Type: application/json
+
+{
+  "pseudo": "Fidou",
+  "password": "password"
+}
+
+### Add Item to Cart
+POST {{baseUrl}}/carts/users/{{pseudo}}/products/{{productId}}
+Authorization: {{token}}
+
+### Remove Item from Cart
+DELETE {{baseUrl}}/carts/users/{{pseudo}}/products/{{productId}}
+Authorization: {{token}}
+
+### Get All Items in Cart
+GET {{baseUrl}}/carts/users/{{pseudo}}
+Authorization: {{token}}
+
+### Remove All Items by Author
+DELETE {{baseUrl}}/carts/users/{{pseudo}}
+
+### Remove Items by Product ID
+DELETE {{baseUrl}}/carts/products/{{productId}}
+
+### Get All Products
+GET {{baseUrl}}/product
+
+### Get One Product by ID
+GET {{baseUrl}}/product/1
+
+### Create a Product
+POST {{baseUrl}}/product
+Content-Type: application/json
+
+{
+  "name": "New Product",
+  "category": "New Category",
+  "price": 99.99
+}
+
+### Remove All Products
+DELETE {{baseUrl}}/product
+
+### Delete One Product by ID
+DELETE {{baseUrl}}/product/{id}
+
+### Update One Product by ID
+PUT {{baseUrl}}/product/{id}
+Content-Type: application/json
+
+{
+  "name": "Updated Product",
+  "price": 89.99
+}
+
+### Create One User
+POST {{baseUrl}}/users/Fidou
+Content-Type: application/json
+
+{
+  "pseudo": "Fidou",
+  "firstname": "Fidou",
+  "lastname": "Fidou",
+  "password": "password"
+}
+
+
+### Read One User by Pseudo
+GET {{baseUrl}}/users/Fidou
+
+### Update One User by Pseudo
+PUT {{baseUrl}}/users/{pseudo}
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "pseudo": "Fidou",
+  "password": "updatedPassword"
+}
+
+### Delete One User by Pseudo
+DELETE {{baseUrl}}/users/{pseudo}
+Authorization: {{token}}

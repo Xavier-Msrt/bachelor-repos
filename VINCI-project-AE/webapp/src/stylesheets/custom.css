@@ -1,0 +1,296 @@
+input[type='submit'] {
+  background-color: #004182 !important;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: #004182 !important;
+}
+
+.bg-primary {
+  background-color: #004182 !important;
+}
+
+.bg-success {
+  background-color: #B4E5A2 !important;
+}
+
+.bg-danger {
+  background-color: #F1B5B9 !important;
+}
+
+.border-success {
+  border-color: #3B7D23 !important;
+}
+/*
+.border-danger {
+  border-color: #F1B5B9 !important;
+}
+
+ */
+
+.text-success {
+  color: #3B7D23 !important;
+}
+
+.border-primary {
+  border-color: #004182 !important;
+}
+
+.text-internify {
+  color: #004182 !important;
+}
+
+.mt-n1 {
+  margin-top: -0.25rem !important;
+}
+
+.mb-n1 {
+  margin-bottom: 2px !important;
+}
+
+#colVide {
+  width: 5% !important;
+}
+
+.bg-secondary {
+  background-color: #d8e0e7 !important;
+}
+
+
+/* Pagination */
+.page-link:hover {
+  color: #3564a2;
+}
+
+.cursor-clickable {
+  cursor: pointer;
+}
+
+.unselectable {
+  user-select: none;
+}
+
+/* Active button on pagination */
+.active {
+  background-color: #004182 !important;
+  border-color: #004182 !important;
+  color: white !important;
+}
+
+.active:hover {
+  color: white !important;
+}
+
+/* NAVBAR */
+
+#navbar-logo {
+  height: 66px;
+  width: 291px;
+}
+
+.navbar-profil {
+  right: 0;
+}
+
+#navbar-profil-avatar {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.navbar-profil-signout {
+  height: 50px;
+}
+
+#navbar-role {
+  font-weight: bold;
+}
+
+#navbar-username {
+  white-space: nowrap;
+}
+
+.navbar-active {
+  text-decoration: underline;
+  text-decoration-color: #004182;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+  color: #004182;
+  font-weight: bold;
+}
+
+.navbar-active:hover {
+  color: #004182;
+}
+
+/*Details contact*/
+
+.div-accepted-pt1{
+  display: flex;
+}
+
+.div-accepted{
+  display: flex;
+  justify-content : space-evenly;
+  flex-direction: column;
+
+}
+.div-contact {
+  display: flex;
+  justify-content: space-around;
+}
+
+.div-accepted{
+  display: flex;
+  justify-content: space-around;
+  justify-items: normal;
+}
+
+.btn {
+  color: white;
+  border-color: transparent;
+  border-radius: 5%;
+}
+
+.supp-btn {
+  padding-left: 22%;
+  margin-left: 25%;
+}
+
+.shadow1 {
+  border: solid;
+  border-color: #004182;
+  border-radius: 2px;
+}
+
+.form {
+  padding-right: 50%;
+}
+
+/* HomePage */
+
+.contact-list-on-page-div {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3%;
+}
+
+.card-contact {
+  width: 100%;
+  border-color: #004182;
+  border-radius: 4px;
+  padding: 0px;
+}
+
+.card-contact-information {
+  padding: 5px;
+  margin: 8px 0px 8px 0px;
+  border: 2px solid rgba(30, 29, 29, 0.15);
+  border-radius: 5px;
+}
+
+#contact-page-no-contact-div {
+  top: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Personnal Data */
+.container-personal-data {
+  padding: 0% 5% 0% 5%;
+}
+
+.row-personal-data-right-small {
+  height: 35vh;
+}
+
+.row-personal-data-right-big {
+  height: 70vh;
+}
+
+.row-personal-data {
+  height: 70vh;
+}
+
+.personal-data-contact-font {
+  font-size: 0.75rem;
+}
+
+.table-striped > thead > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: transparent;
+}
+
+.table-contacts > :not(caption) > * > * {
+  background-color: transparent;
+}
+
+.table-striped-contacts > tbody > tr:nth-child(even) > td {
+  background-color: transparent;
+}
+
+.table-striped-contacts > tbody > tr:nth-child(odd) > td {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.table-row-nowrap td,
+th {
+  max-width: 75px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*loader*/
+
+.loader {
+  position: absolute;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #004182;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+.mini-loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #004182;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+}
+
+#loader {
+  background-color: white;
+  top: 0;
+  z-index: 9999;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dashboard */
+
+#dashboard-bar {
+  border-right: 3px solid #000000;
+}
+
+.dashboard-blacklist {
+    background-color: #f1b5b9;
+}
+
+#graph {
+  height: 85%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}

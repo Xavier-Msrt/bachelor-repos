@@ -1,0 +1,9 @@
+@baseUrl=http://localhost:9004
+
+POST {{baseUrl}}/authentication/connect
+Content-Type: application/json
+
+{
+  "pseudo": "PetWard",
+  "password": "password"
+}

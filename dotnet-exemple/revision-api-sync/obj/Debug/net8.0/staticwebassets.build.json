@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "vi9dzvqlzoGHoIzQdRHCudLLMM6kcaHSok3J71qU9gQ=",
+  "Source": "revision-api",
+  "BasePath": "_content/revision-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

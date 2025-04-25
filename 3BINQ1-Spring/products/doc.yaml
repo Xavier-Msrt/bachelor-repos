@@ -1,0 +1,103 @@
+openapi: 3.1.0
+info:
+  title: Product Service
+  description: service provide Product access
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:9001'
+paths:
+
+  /product/:
+    get:
+      summary: Récuppérer tout les produits
+      responses:
+        200:
+          description: Les produits sont récuppérer
+    post:
+      summary: Crée un produit
+      requestBody:
+        description: Données du produit
+        content:
+          'application/json':
+            schema:
+              $ref: "#/components/schemas/product"
+      responses:
+        201:
+          description: Le produit a été crée
+        400:
+          description: Des données son manquentes ou incorrect
+    delete:
+      summary: Supprimer tout les produits
+
+
+  /product/{id}:
+    get:
+      summary: Récuppérer un produit
+      parameters:
+        - name: id
+          in: path
+          description: Identifiant du produit
+          required: true
+          schema:
+            type: int
+            example: 2
+      responses:
+        200:
+          description: Le produit est récuppérer
+        404:
+          description: Le produit n'exist pas
+    delete:
+      summary: Supprimer un produit
+      parameters:
+        - name: id
+          in: path
+          description: Identifiant du produit
+          required: true
+          schema:
+            type: int
+            example: 4
+      responses:
+        200:
+          description: Le produit a bien été supprimer
+        404:
+          description: Le produit n'exist pas
+    put:
+      summary: Modifier une ou plusieurs donnée d'un produit
+      parameters:
+        - name: id
+          in: path
+          description: Identifiant du produit
+          required: true
+          schema:
+            type: int
+            example: 1
+      responses:
+        200:
+          description: les données du produit on été modifier
+        400:
+          description: les donées sont invalide
+        404:
+          description: Le produit n'exist pas
+
+
+
+
+
+components:
+  schemas:
+    product:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Nom du produit
+        category:
+          type: string
+          description: Categorie du produit
+        price:
+          type: float
+          description: Prix du produit
+    example:
+      name: Savon solide
+      category: soin
+      price: 5.6

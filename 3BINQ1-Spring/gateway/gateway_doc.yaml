@@ -1,0 +1,284 @@
+openapi: 3.1.0
+info:
+  title: Gateway API
+  version: 1.0.0
+paths:
+  /authentication/connect:
+    post:
+      summary: Connect user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnsafeCredentials'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+  /carts/users/{pseudo}/products/{productId}:
+    post:
+      summary: Add item to cart
+      parameters:
+        - name: pseudo
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Item added
+    delete:
+      summary: Remove item from cart
+      parameters:
+        - name: pseudo
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Item removed
+  /carts/users/{pseudo}:
+    get:
+      summary: Get all items in cart
+      parameters:
+        - name: pseudo
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+    delete:
+      summary: Remove all items by author
+      parameters:
+        - name: pseudo
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Items removed
+  /carts/products/{productId}:
+    delete:
+      summary: Remove items by product ID
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Items removed
+
+  /product:
+    get:
+      summary: Get all products
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+    post:
+      summary: Create a product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          description: Product created
+    delete:
+      summary: Remove all products
+      responses:
+        '200':
+          description: Products removed
+  /product/{id}:
+    get:
+      summary: Get one product by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+    delete:
+      summary: Delete one product by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Product deleted
+    put:
+      summary: Update one product by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '200':
+          description: Product updated
+
+  /users/{pseudo}:
+    post:
+      summary: Create one user
+      parameters:
+        - name: pseudo
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: User created
+    get:
+      summary: Read one user by pseudo
+      parameters:
+        - name: pseudo
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    put:
+      summary: Update one user by pseudo
+      parameters:
+        - name: pseudo
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: User updated
+    delete:
+      summary: Delete one user by pseudo
+      parameters:
+        - name: pseudo
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User deleted
+
+components:
+  schemas:
+    UnsafeCredentials:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        price:
+          type: number
+          format: float
+    User:
+      type: object
+      properties:
+        pseudo:
+          type: string
+        email:
+          type: string
+        password:
+          type: string

@@ -1,0 +1,167 @@
+@baseUrl = http://localhost:8080
+@idCompany = 7
+
+### Login chisom
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "achille.skile@student.vinci.be",
+  "password": "mdpuser.1"
+}
+
+> {%
+  client.global.set("userToken", response.body.token);
+%}
+
+### Get all contacts of user (Correct)
+GET {{baseUrl}}/contacts
+Authorization: {{userToken}}
+
+### Get Contact info (Correct)
+GET {{baseUrl}}/contacts/{{idCompany}}
+Authorization: {{userToken}}
+
+
+### Post Contact info (Incorrect)
+POST {{baseUrl}}/contacts/{{idCompany}}
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "state": "ADMITTED"
+}
+
+### Post Contact info (Correct)
+POST {{baseUrl}}/contacts/{{idCompany}}
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "state": "ADMITTED",
+  "versionContact": 1,
+  "studentIdContact": 23,
+  "companyIdContact": 7,
+  "meetingPlace": "REMOTE"
+}
+
+### Post Contact info (Incorrect)
+POST {{baseUrl}}/contacts/{{idCompany}}
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "versionContact": 2,
+  "studentIdContact": 23,
+  "companyIdContact": {{idCompany}},
+  "state": "TURNED_DOWN"
+}
+
+### Post Contact info (Incorrect)
+POST {{baseUrl}}/contacts/7
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "versionContact": 1,
+  "studentIdContact": 8,
+  "companyIdContact": 4,
+  "state": "INTERRUPTED"
+}
+
+### Post Contact info (Correct)
+POST {{baseUrl}}/contacts/{{idCompany}}
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "versionContact": 2,
+  "studentIdContact": 23,
+  "companyIdContact": {{idCompany}},
+  "state": "INTERRUPTED"
+}
+
+### Post Contact info (Incorrect)
+POST {{baseUrl}}/contacts/{{idCompany}}
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "state": "TURNED_DOWN",
+  "reasonRefusal": "No project available"
+}
+
+### Post Contact info (Incorrect)
+POST {{baseUrl}}/contacts/{{idCompany}}
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "state": "ACCEPTED"
+}
+
+### Get User info (Correct)
+GET {{baseUrl}}/contacts
+Authorization: {{userToken}}
+
+### Get Error trying to access User contacts
+GET {{baseUrl}}/contacts
+Authorization: {{fakeToken}}
+
+
+
+### Start contact (Correct)
+POST {{baseUrl}}/contacts
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "companyId": 8
+}
+
+
+### Login Prof Raphael Baroni
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "raphael.baroni@vinci.be",
+  "password": "Prof24,z"
+}
+
+> {%
+  client.global.set("profToken", response.body.token);
+%}
+
+
+### Get All contact by company id
+GET {{baseUrl}}/contacts/admin/3
+Authorization: {{profToken}}
+
+
+### Login Admin Annouck Lancaster
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "annouck.lancaster@vinci.be",
+  "password": "Admin;10."
+}
+
+> {%
+  client.global.set("adminToken", response.body.token);
+%}
+
+### Get All contact by company id
+GET {{baseUrl}}/contacts/admin/3
+Authorization: {{adminToken}}
+
+
+### Get All contact by company id (FAIL)
+GET {{baseUrl}}/contacts/admin/3
+Authorization: {{userToken}}
+
+
+### Get All contact by company id (EMPTY)
+GET {{baseUrl}}/contacts/admin/100
+Authorization: {{adminToken}}

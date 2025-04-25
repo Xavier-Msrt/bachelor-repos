@@ -1,0 +1,61 @@
+@baseUrl = http://localhost:8080
+
+### Login Caroline
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "caroline.line@student.vinci.be",
+  "password": "hello"
+}
+
+> {%
+  client.global.set("userToken", response.body.token);
+%}
+
+### Login Raphael Baroni
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "raphael.baroni@vinci.be",
+  "password": "Prof24,z"
+}
+
+> {%
+  client.global.set("teacherToken", response.body.token);
+%}
+
+### Update user's phone number (Correct)
+POST {{baseUrl}}//users/updatePhoneNumber
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "idUser": 5,
+  "versionUser": 46,
+  "phoneNumberUser": "042136"
+}
+
+### Get users count for all year
+GET {{baseUrl}}/users/admin/count
+Authorization: {{teacherToken}}
+
+### Get users count for year with the id 2
+GET {{baseUrl}}/users/admin/count/4
+Authorization: {{teacherToken}}
+
+
+### Update user's phone number (Correct)
+POST {{baseUrl}}//users/updatePassword
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "user": {
+    "idUser" : 5
+  },
+  "password": "helloFromTheOtherSide",
+  "newPassword": "hello"
+}
+

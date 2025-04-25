@@ -1,0 +1,60 @@
+@baseUrl = http://localhost:8080
+
+### Login xavier
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "xavier.massart@student.vinci.be",
+  "password": "test"
+}
+
+> {%
+  client.global.set("XavToken", response.body.token);
+%}
+
+### Get User info
+GET {{baseUrl}}/auths/user
+Authorization: {{XavToken}}
+
+
+### Login Jo
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "caroline.line@student.vinci.be",
+  "password": "mdpuser.1"
+}
+
+### Login Jo with wrong password
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "joachim.qi@student.vinci.be",
+  "password": "wrong"
+}
+
+
+### Register
+POST {{baseUrl}}/auths/register
+Content-Type: application/json
+
+{
+  "emailUser": "x.testd@student.vinci.be",
+  "password": "test",
+  "firstNameUser": "Xavier",
+  "lastNameUser": "Massart",
+  "phoneNumberUser": "0458769291",
+  "role": "STUDENT"
+}
+
+### Login with good password
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "emailUser": "x.testd@student.vinci.be",
+  "password": "test"
+}
